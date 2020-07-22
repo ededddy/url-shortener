@@ -5,13 +5,10 @@ const mongoose = require("mongoose");
 const app = express();
 
 mongoose
-  .connect(
-    "mongodb+srv://admin:vhTOAYLPa5WAJ8oj@urls.t6abm.gcp.mongodb.net/URLs?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb://localhost/urls", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("Connected to mongoDb... "));
 
 app.set("view engine", "ejs");
